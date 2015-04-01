@@ -125,6 +125,11 @@ stockdata=`echo ${STOCKINFO[@]}`
     fi
 }
 
+# Run commands on Vagrant box via SSH
+vudo() {
+	eval "vagrant ssh -c \"cd /vagrant/laravel && $@\""
+}
+
 # Directory navigation aliases
 alias ..='cd ..'
 alias ...='cd ../..'
