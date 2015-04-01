@@ -126,6 +126,7 @@ stockdata=`echo ${STOCKINFO[@]}`
 }
 
 # Run commands on Vagrant box via SSH
+# https://cameronspear.com/blog/vagrant-ssh-command-shortcut/
 vudo() {
 	eval "vagrant ssh -c \"cd /vagrant/laravel && $@\""
 }
