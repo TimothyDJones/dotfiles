@@ -125,6 +125,19 @@ stockdata=`echo ${STOCKINFO[@]}`
     fi
 }
 
+# Function to trim leading and trailing spaces
+# http://notes.rioastamal.net/2014/05/bash-shell-trim-whitespace.html
+trim() {
+  # Accept input from argument or STDIN
+  # So you can do both:
+  # $ echo '  #FOO#   ' | trim
+  # or
+  # $ trim '   #FOO#   '
+  local STRING=$( [ ! -z "$1" ] && echo $1 || cat ; )
+   
+  echo "$STRING" | sed -e 's/^\s*//' -e 's/\s*$//'
+}
+
 # Directory navigation aliases
 alias ..='cd ..'
 alias ...='cd ../..'
