@@ -138,6 +138,12 @@ trim() {
   echo "$STRING" | sed -e 's/^\s*//' -e 's/\s*$//'
 }
 
+# Run commands on Vagrant box via SSH
+# https://cameronspear.com/blog/vagrant-ssh-command-shortcut/
+vudo() {
+	eval "vagrant ssh -c \"cd /vagrant/laravel && $@\""
+}
+
 # Directory navigation aliases
 alias ..='cd ..'
 alias ...='cd ../..'
